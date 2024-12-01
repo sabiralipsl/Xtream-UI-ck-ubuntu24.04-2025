@@ -6,7 +6,7 @@ from zipfile import ZipFile
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-rDownloadURL = {"main": "https://bitbucket.org/masoudgb/xtream-ui/raw/master/main_xui_masoudgb.zip", "sub": "https://bitbucket.org/masoudgb/xtream-ui/raw/master/sub_xui_masoudgb.zip"}
+rDownloadURL = {"main": "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/main_xui_masoudgb.zip", "sub": "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/sub_xui_masoudgb.zip"}
 import os
 rPackages = ["libcurl4", "libxslt1-dev", "libgeoip-dev", "libonig-dev", "e2fsprogs", "wget", "mcrypt", "nscd", "htop", "zip", "unzip", "mc", "mariadb-server", "libpng16-16", "python3-paramiko", "python-is-python3"]
 rInstall = {"MAIN": "main", "LB": "sub"}
@@ -91,7 +91,7 @@ def prepare(rType="MAIN"):
     if rType == "MAIN":
         printc("Install MariaDB 11.5 repository")
         subprocess.run("apt-get install -y software-properties-common > /dev/null 2>&1", shell=True)
-        subprocess.run("curl -fsSL https://mariadb.org/mariadb_release_signing_key.asc | gpg --dearmor -o /usr/share/keyrings/mariadb-archive-keyring.gpg > /dev/null 2>&1", shell=True)
+        subprocess.run("curl -fsSL https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/mariadb_release_signing_key.asc | gpg --dearmor -o /usr/share/keyrings/mariadb-archive-keyring.gpg > /dev/null 2>&1", shell=True)
         subprocess.run(
             "echo y | sudo add-apt-repository -y 'deb [arch=amd64,arm64,ppc64el,s390x] [signed-by=/usr/share/keyrings/mariadb-archive-keyring.gpg] https://mirrors.xtom.com/mariadb/repo/11.5/ubuntu noble main' > /dev/null 2>&1",
             shell=True
@@ -122,10 +122,10 @@ def prepare(rType="MAIN"):
         subprocess.run("sudo apt install -y build-essential checkinstall libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev wget tar > /dev/null 2>&1", shell=True)
 
         if not python_installed:
-            subprocess.run("cd /usr/src && sudo wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz > /dev/null 2>&1 && sudo tar xzf Python-2.7.18.tgz > /dev/null 2>&1 && cd Python-2.7.18 && sudo ./configure --enable-optimizations > /dev/null 2>&1 && sudo make altinstall > /dev/null 2>&1", shell=True)
+            subprocess.run("cd /usr/src && sudo wget https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/Python-2.7.18.tgz > /dev/null 2>&1 && sudo tar xzf Python-2.7.18.tgz > /dev/null 2>&1 && cd Python-2.7.18 && sudo ./configure --enable-optimizations > /dev/null 2>&1 && sudo make altinstall > /dev/null 2>&1", shell=True)
 
         if not pip_installed:
-            subprocess.run("curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && sudo python2.7 get-pip.py > /dev/null 2>&1", shell=True)
+            subprocess.run("curl https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/get-pip.py --output get-pip.py > /dev/null 2>&1 && sudo python2.7 get-pip.py > /dev/null 2>&1", shell=True)
 
         if not paramiko_installed:
             subprocess.run("pip2.7 install paramiko > /dev/null 2>&1", shell=True)
@@ -180,9 +180,9 @@ def install(rType="MAIN"):
 
 def update(rType="MAIN"):
     if rType == "UPDATE":
-        rlink = "https://bitbucket.org/masoudgb/xtream-ui/raw/master/update.zip"
+        rlink = "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/update.zip"
     else:
-        rlink = "https://bitbucket.org/masoudgb/xtream-ui/raw/master/release_22f.zip"
+        rlink = "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/release_22f.zip"
         printc("Downloading Software Update")  
     os.system('wget -q -O "/tmp/update.zip" "%s"' % rlink)
     if os.path.exists("/tmp/update.zip"):
@@ -286,8 +286,8 @@ def configure():
     except: pass
     if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/tv_archive"): os.mkdir("/home/xtreamcodes/iptv_xtream_codes/tv_archive/")
     os.system("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/")
-    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb"): os.system("wget -q https://bitbucket.org/masoudgb/xtream-ui/raw/master/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb")
-    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php"): os.system("wget -q https://bitbucket.org/masoudgb/xtream-ui/raw/master/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php")
+    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb"): os.system("wget -q https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb")
+    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php"): os.system("wget -q https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php")
     os.system("chown xtreamcodes:xtreamcodes -R /home/xtreamcodes > /dev/null")
     os.system("chmod -R 0777 /home/xtreamcodes > /dev/null")
     os.system("chattr -ai /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb > /dev/null")
