@@ -6,7 +6,7 @@ from zipfile import ZipFile
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-rDownloadURL = "https://bitbucket.org/masoudgb/xtream-ui/raw/master/sub_xui_masoudgb.zip"
+rDownloadURL = "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/sub_xui_masoudgb.zip"
 rPackages = ["libcurl4", "libxslt1-dev", "libgeoip-dev", "e2fsprogs", "wget", "mcrypt", "nscd", "htop", "zip", "unzip", "mc"]
 
 def is_installed(package_name):
@@ -17,7 +17,7 @@ def install_libzip5():
     if not is_installed("libzip5"):
         print("Installing libzip5")
         try:
-            subprocess.run("wget http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip5_1.5.1-0ubuntu1_amd64.deb -q", shell=True, check=True)
+            subprocess.run("wget https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/libzip5_1.5.1-0ubuntu1_amd64.deb -q", shell=True, check=True)
             subprocess.run("sudo dpkg -i libzip5_1.5.1-0ubuntu1_amd64.deb -q", shell=True, check=True)
             subprocess.run("rm libzip5_1.5.1-0ubuntu1_amd64.deb", shell=True, check=True)  # Clean up
         except subprocess.CalledProcessError as e:
@@ -102,8 +102,8 @@ def configure():
         os.mkdir("/home/xtreamcodes/iptv_xtream_codes/tv_archive/")
     subprocess.run("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/", shell=True, check=True)
     subprocess.run("chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb -q", shell=True, check=True)
-    subprocess.run("wget -q https://bitbucket.org/masoudgb/xtream-ui/raw/master/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb", shell=True, check=True)
-    subprocess.run("wget -q https://bitbucket.org/masoudgb/xtream-ui/raw/master/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php", shell=True, check=True)
+    subprocess.run("wget -q https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb", shell=True, check=True)
+    subprocess.run("wget -q https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php", shell=True, check=True)
     subprocess.run("chown xtreamcodes:xtreamcodes -R /home/xtreamcodes -q", shell=True, check=True)
     subprocess.run("chmod -R 0777 /home/xtreamcodes -q", shell=True, check=True)
     subprocess.run("chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb -q", shell=True, check=True)
