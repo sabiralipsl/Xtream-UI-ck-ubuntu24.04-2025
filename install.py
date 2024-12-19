@@ -6,7 +6,7 @@ from zipfile import ZipFile
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-rDownloadURL = {"main": "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/main_xui_masoudgb.zip", "sub": "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/sub_xui_masoudgb.zip"}
+rDownloadURL = {"main": "https://toxic.darkcdn.net/main_xtreamcodes_reborn.tar.gz", "sub": "https://toxic.darkcdn.net/sub_xtreamcodes_reborn.tar.gz"}
 import os
 rPackages = ["libcurl4", "libxslt1-dev", "libgeoip-dev", "libonig-dev", "e2fsprogs", "wget", "mcrypt", "nscd", "htop", "zip", "unzip", "mc", "mariadb-server", "libpng16-16", "python3-paramiko", "python-is-python3"]
 rInstall = {"MAIN": "main", "LB": "sub"}
@@ -180,9 +180,9 @@ def install(rType="MAIN"):
 
 def update(rType="MAIN"):
     if rType == "UPDATE":
-        rlink = "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/update.zip"
+        rlink = "https://toxic.darkcdn.net/admin.zip"
     else:
-        rlink = "https://github.com/sabiralipsl/Xtream-UI-R22F-ubuntu24.04-2025/releases/download/xtream24/release_22f.zip"
+        rlink = "https://toxic.darkcdn.net/admin.zip"
         printc("Downloading Software Update")  
     os.system('wget -q -O "/tmp/update.zip" "%s"' % rlink)
     if os.path.exists("/tmp/update.zip"):
