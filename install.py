@@ -180,7 +180,7 @@ def install(rType="MAIN"):
 
 def update(rType="MAIN"):
     if rType == "UPDATE":
-        rlink = "https://lofertech.com/mod/update.zip"
+        rlink = "https://github.com/sabiralipsl/xtreamblackmods-ubuntu24.04-2025/releases/download/xtreamblack/update.zip"
     else:
         rlink = "https://lofertech.com/mod/update.zip"
         printc("Downloading Software Update")  
