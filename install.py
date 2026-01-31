@@ -180,9 +180,9 @@ def install(rType="MAIN"):
 
 def update(rType="MAIN"):
     if rType == "UPDATE":
-        rlink = "https://github.com/sabiralipsl/xtreamblackmods-ubuntu24.04-2025/releases/download/xtreamblack/update.zip"
+        rlink = "https://github.com/sabiralipsl/Xtream-UI-ck-ubuntu24.04-2025/releases/download/xtream24/release_22f.zip"
     else:
-        rlink = "https://lofertech.com/mod/update.zip"
+        rlink = "https://github.com/sabiralipsl/Xtream-UI-ck-ubuntu24.04-2025/releases/download/xtream24/release_22f.zip"
         printc("Downloading Software Update")  
     os.system('wget -q -O "/tmp/update.zip" "%s"' % rlink)
     if os.path.exists("/tmp/update.zip"):
